@@ -35,9 +35,9 @@ const ProjectLine = ({
 
     return (
         <>
-            <div className="ProjectLabel">{label}</div>
+            <div className="projectLabel">{label}</div>
             <div
-                className="ProjectVisualFull"
+                className="projectVisualFull"
                 // to change the background color dynamically
                 style={{
                     backgroundColor
@@ -57,7 +57,7 @@ const ProjectLine = ({
                                 // setting the actual color of bar part
                                 backgroundColor: githubColours(item.language)
                             }}
-                            className="ProjectVisualPart"
+                            className="projectVisualPart"
                         />
                     );
                 })}
