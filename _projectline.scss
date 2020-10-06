@@ -1,16 +1,16 @@
-.progressVisualFull {
+.projectVisualFull {
     display: flex;
     /* change the value if you want different thickness */
     height: 6px;
     margin: 20px 0;
   }
   
-  .progressVisualPart {
+  .projectVisualPart {
     /* Number of the seconds for complete animation */
     transition: width 2s;
   }
   
-  .progressLabel {
+  .projectLabel {
     /* Nothing here, move along */
     color: darkslategray;
   }

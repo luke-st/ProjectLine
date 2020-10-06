@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import githubColours from './githubColours'
 
-const ProgressLine = ({
+const ProjectLine = ({
     label,
     backgroundColor = "#e5e5e5",
     // expected format for visual parts
@@ -35,9 +35,9 @@ const ProgressLine = ({
 
     return (
         <>
-            <div className="progressLabel">{label}</div>
+            <div className="ProjectLabel">{label}</div>
             <div
-                className="progressVisualFull"
+                className="ProjectVisualFull"
                 // to change the background color dynamically
                 style={{
                     backgroundColor
@@ -45,7 +45,7 @@ const ProgressLine = ({
             >
                 {visualParts.map((item, index) => {
                     // map each part into separate div and each will be animated
-                    // because of the "transition: width 2s;" css in class "progressVisualPart"
+                    // because of the "transition: width 2s;" css in class "ProjectVisualPart"
                     // and because of the new width ("widths[index]", previous one was 0)
                     return (
                         <div
@@ -57,7 +57,7 @@ const ProgressLine = ({
                                 // setting the actual color of bar part
                                 backgroundColor: githubColours(item.language)
                             }}
-                            className="progressVisualPart"
+                            className="ProjectVisualPart"
                         />
                     );
                 })}
@@ -77,4 +77,4 @@ const ProgressLine = ({
     );
 };
 
-export default ProgressLine;
+export default ProjectLine;
