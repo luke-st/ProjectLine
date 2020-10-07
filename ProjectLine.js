@@ -35,13 +35,13 @@ const ProjectLine = ({
 
     return (
         <>
-            <div className="projectLabel">{label}</div>
             <div
                 className="projectVisualFull"
                 // to change the background color dynamically
                 style={{
                     backgroundColor
                 }}
+                key={`${label}-bar`}
             >
                 {visualParts.map((item, index) => {
                     // map each part into separate div and each will be animated
@@ -51,9 +51,9 @@ const ProjectLine = ({
                         <div
                             // There won't be additional changes in the array so the index can be used
                             /* eslint-disable-next-line react/no-array-index-key */
-                            key={index}
+                            key={`${label} ${item.language}`}
                             style={{
-                                width: widths[index],
+                                width: `${widths[index]}%`,
                                 // setting the actual color of bar part
                                 backgroundColor: githubColours(item.language)
                             }}
@@ -62,14 +62,14 @@ const ProjectLine = ({
                     );
                 })}
             </div>
-            <div>
+            <div key={`${label}-key`}>
                 {visualParts.map((item) => {
                     let color = githubColours(item.language)
                     // Generate key for bar with type of code and colour.
                     return (
-                        <div>
-                            <span key={item.language} className='line_language'><span style={{ color }}>● </span>{item.language}</span>
-                        </div>
+                        <>
+                            <span className='line_language'><span style={{ color }}>● </span>{item.language}</span>
+                        </>
                     )
                 })}
             </div>
