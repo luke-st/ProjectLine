@@ -1,5 +1,3 @@
-# README
-
 # ProjectLine
 
 A quick imitation of GitHub's Linguist (Project language bar) that I made for my website.
